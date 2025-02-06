@@ -21,3 +21,4 @@ django-filter==23.5
 django-axes==7.0.0
 django-ipware==7.0.1
 python-ipware==3.0.0
+django-location-field== 2.7.3
