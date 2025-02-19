@@ -13,6 +13,7 @@ from django.apps import apps
 class Destinations(models.Model):
     denstination_id = ShortUUIDField(length = 10,max_length=15,unique=True, alphabet = string.digits)
     name = models.CharField(max_length= 50)
+    description = models.TextField(max_length=1000, blank=True , null = True)
     country = models.CharField(max_length =50)
     address = models.TextField(blank=True, null = True)
     location = PlainLocationField(zoom =7)
@@ -42,6 +43,7 @@ class Tours(models.Model):
     title = models.CharField(max_length= 100, null = False, blank = False)
     description = models.TextField(max_length=1000, blank=True , null = True)
     price = models.DecimalField(max_digits = 10, decimal_places = 2)
+    images = models.ImageField( upload_to='media/tours', blank=True,null=True)
     start_date = models.DateField()
     end_date  = models.DateField()
     available_slots  = models.IntegerField()
